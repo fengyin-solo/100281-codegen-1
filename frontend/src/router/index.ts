@@ -21,6 +21,9 @@ const Waterbody = () => import('@/views/waterbody/index.vue')
 const Code = () => import('@/views/code/index.vue')
 const Complaint = () => import('@/views/complaint/index.vue')
 const Seasonplan = () => import('@/views/seasonplan/index.vue')
+const Adopt = () => import('@/views/adopt/index.vue')
+const AdoptDetail = () => import('@/views/adopt/detail.vue')
+const AdoptPeople = () => import('@/views/adopt/people.vue')
 
 const router = createRouter({
   history: createWebHistory(),
@@ -46,6 +49,10 @@ const router = createRouter({
     { path: '/code', name: 'code', component: Code },
     { path: '/complaint', name: 'complaint', component: Complaint },
     { path: '/seasonplan', name: 'seasonplan', component: Seasonplan },
+    // meta.keepAlive：列表页进详情再返回时保留筛选条件、分页与滚动位置
+    { path: '/adopt', name: 'adopt', component: Adopt, meta: { keepAlive: true } },
+    { path: '/adopt/:id', name: 'adopt-detail', component: AdoptDetail },
+    { path: '/adopt-people', name: 'adopt-people', component: AdoptPeople },
   ],
 })
 

@@ -26,6 +26,7 @@ class EntryPayload(BaseModel):
 
     values: dict[str, Any] = Field(default_factory=dict)
     remark: str | None = None
+    operator: str | None = None  # 本次变更经办人（认建认养流转记录必填）
 
 
 
@@ -268,3 +269,16 @@ class SeasonplanEntry(BaseModel):
     field_5: str | None = None  # 编制人
     field_6: str | None = None  # 审批人
     field_7: str | None = None  # 方案状态
+
+
+class AdoptEntry(BaseModel):
+    """绿地认建认养明细结构。"""
+
+    field_0: str | None = None  # 认养编号
+    field_1: str | None = None  # 绿地编号
+    field_2: str | None = None  # 绿地名称
+    field_3: str | None = None  # 所属区域
+    field_4: str | None = None  # 认养类型
+    field_5: str | None = None  # 认养人姓名
+    field_6: str | None = None  # 联系方式
+    field_7: str | None = None  # 认养状态
