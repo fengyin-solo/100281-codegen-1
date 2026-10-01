@@ -21,9 +21,17 @@ const Waterbody = () => import('@/views/waterbody/index.vue')
 const Code = () => import('@/views/code/index.vue')
 const Complaint = () => import('@/views/complaint/index.vue')
 const Seasonplan = () => import('@/views/seasonplan/index.vue')
+const Adoption = () => import('@/views/adoption/index.vue')
+const AdoptionDetail = () => import('@/views/adoption/detail.vue')
+const Adopter = () => import('@/views/adopter/index.vue')
 
 const router = createRouter({
   history: createWebHistory(),
+  // 浏览器前进后退时回到离开时的滚动位置，普通跳转回顶部
+  scrollBehavior(_to, _from, savedPosition) {
+    if (savedPosition) return savedPosition
+    return { top: 0 }
+  },
   routes: [
     { path: '/', name: 'dashboard', component: Dashboard },
     { path: '/plot', name: 'plot', component: Plot },
@@ -46,6 +54,9 @@ const router = createRouter({
     { path: '/code', name: 'code', component: Code },
     { path: '/complaint', name: 'complaint', component: Complaint },
     { path: '/seasonplan', name: 'seasonplan', component: Seasonplan },
+    { path: '/adoption', name: 'adoption', component: Adoption },
+    { path: '/adoption/:id', name: 'adoption-detail', component: AdoptionDetail },
+    { path: '/adopter', name: 'adopter', component: Adopter },
   ],
 })
 

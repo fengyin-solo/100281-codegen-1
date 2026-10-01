@@ -257,6 +257,18 @@ class ComplaintEntry(BaseModel):
     field_6: str | None = None  # 处理结果
     field_7: str | None = None  # 记录状态
 
+class AdoptionEntry(BaseModel):
+    """认养记录明细结构。"""
+
+    field_0: str | None = None  # 认养编号
+    field_1: str | None = None  # 绿地编号
+    field_2: str | None = None  # 绿地名称
+    field_3: str | None = None  # 认养人
+    field_4: str | None = None  # 联系方式
+    field_5: str | None = None  # 认养方式
+    field_6: str | None = None  # 养护义务
+    field_7: str | None = None  # 履约期限
+
 class SeasonplanEntry(BaseModel):
     """养护方案明细结构。"""
 
